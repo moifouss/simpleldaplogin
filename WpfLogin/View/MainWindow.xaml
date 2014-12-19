@@ -1,0 +1,17 @@
+﻿<Window x:Class="WpfLogin.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+         WindowStartupLocation="CenterScreen"
+        Title="Accueil" >
+    <Grid>
+        <StackPanel>
+            <Menu>
+                <MenuItem Header="Fichier">
+                    <MenuItem x:Name="mnQuiter"  Header="Quiter" Click="mnQuiter_Click"></MenuItem>
+                </MenuItem>
+            </Menu>
+        </StackPanel>
+        <TextBlock HorizontalAlignment="Center" Margin="224,217,199,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="41" Width="337" FontWeight="Bold" FontSize="20"><Run Text="Vous êtes sur "/><Run Text=" la fe"/><Run Text="n"/><Run Text="être principale!"/></TextBlock>
+
+    </Grid>
+</Window>

@@ -1,0 +1,50 @@
+﻿<Window x:Class="WpfLogin.View.Login"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"       
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="ToolWindow"
+        Topmost="True"
+        Background="#D5DCF6"
+        Title="Login" Height="280" Width="400">
+    <StackPanel FocusManager.FocusedElement="{Binding ElementName=txtCompte}">
+        <TextBlock TextAlignment="Center"
+                   FontSize="15"
+                   Background="CadetBlue"
+                   Foreground="White"
+                   FontWeight="Bold">            
+                Connexion à l'application
+        </TextBlock>
+        <StackPanel>
+            <GroupBox Header="Login" Height="155">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="145*"/>
+                        <ColumnDefinition Width="147*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="67*"/>
+                        <RowDefinition Height="68*"/>
+                    </Grid.RowDefinitions>
+                    <Label Grid.Column="0" Grid.Row="0" VerticalAlignment="Center">Compte</Label>
+                    <Label Grid.Column="0" Grid.Row="1" VerticalAlignment="Center" Margin="-5,14.4,5.4,10.2">Mot de passe</Label>
+                    <TextBox Grid.Row="0" Name="txtCompte" Height="30" FontSize="16" TextAlignment="Left" Margin="10,15,0,21" Grid.Column="1"/>
+                    <PasswordBox Grid.Column="1" Grid.Row="1" Name="txtMotDePasse" Height="30" Margin="10,18,0,19"></PasswordBox>
+                </Grid>
+            </GroupBox>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button Name="btnOk" Margin="5 0" Width="100" Click="btnOK_Click" >
+                <StackPanel>
+                    <Label FontSize="12">Valider</Label>
+                    <Image Source="/WpfLogin;component/Images/valid.png" Width="32"/>
+                </StackPanel>
+            </Button>
+            <Button Name="btnAnnuler" Width="100" Click="btnAnnuler_Click" >
+                <StackPanel>
+                    <TextBlock FontSize="12" VerticalAlignment="Top">Annuler</TextBlock>
+                    <Image Source="/WpfLogin;component/Images/cancel.png" Width="32"/>
+                </StackPanel>
+            </Button>
+        </StackPanel>
+    </StackPanel>
+</Window>
