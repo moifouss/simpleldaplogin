@@ -30,10 +30,13 @@ namespace WpfLogin.View
         private void btnOK_Click(object sender, RoutedEventArgs e)
          
         {
+            DirectoryEntry Ldap = new DirectoryEntry("LDAP://dc3-2k8.bvg-mali.local", "fodiarra", "Sankoura!1", AuthenticationTypes.Secure);
+
             try
             {
+                DirectorySearcher ds = new DirectorySearcher(Ldap);
+                ds.FindOne();
 
-                DirectoryEntry Ldap = new DirectoryEntry("ldaps://dc3-2k8.bvg-mali.local", "fodiarra", "Sankoura!!1");
                 MessageBox.Show("Connection OK");
 
             }
