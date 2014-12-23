@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using WpfLogin.Model;
+using System.DirectoryServices;
 
 namespace WpfLogin.View
 {
@@ -29,12 +30,19 @@ namespace WpfLogin.View
         private void btnOK_Click(object sender, RoutedEventArgs e)
          
         {
-            if (Model.Authentification.Authentifier(txtCompte.Text, txtMotDePasse.ToString()))
+            try
             {
-                this.Hide();
-                MainWindow fenPrincipale = new MainWindow();
-                fenPrincipale.Show();
-               
+
+                DirectoryEntry Ldap = new DirectoryEntry("ldaps://dc3-2k8.bvg-mali.local", "fodiarra", "Sankoura!!1");
+                MessageBox.Show("Connection OK");
+
+            }
+
+            catch (Exception Ex)
+            {
+
+                MessageBox.Show(Ex.Message);
+
             }
            
         }
@@ -42,7 +50,7 @@ namespace WpfLogin.View
 
         private void btnAnnuler_Click(object sender, RoutedEventArgs e)
         {
-
+            this.Close();
         }
     }
 }
